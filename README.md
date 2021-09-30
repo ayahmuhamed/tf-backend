@@ -30,11 +30,12 @@ Switched to a new branch 'newbranch'
 
 ```
 
+
 * Create main.tf with content below:
 
  vi main.tf
- ```
- * Add a main.tf file with below content :
+
+* Add a main.tf file with below content :
 
 ```
 resource "null_resource" "helloWorld" {
@@ -45,13 +46,12 @@ resource "null_resource" "helloWorld" {
 ```
 
 
-* Run. terraform init
-```
- terraform init
-```
-_sample_:
+* Run terraform init
 
 ```
+ terraform init
+
+
 Initializing the backend...
 
 Initializing provider plugins...
@@ -76,6 +76,9 @@ commands will detect it and remind you to do so if necessary.
 ```
 
 * Run terraform apply to create the null resource :
+
+
+
 ```
 
  terraform apply --auto-approve=true
@@ -101,8 +104,10 @@ null_resource.helloWorld: Creation complete after 0s [id=6552836653313341841]
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed
 
 ```
+
 * Check the untracked files reported by git.
 
+```
  git status
 On branch newbranch
 Untracked files:
@@ -112,10 +117,10 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
+```
 
-
-ayamohamed@ayamohamed-C02G34GGMD6R tf-backend % find . | grep -v git
-
+ find . | grep -v git
+```
 .
 ./terraform.tfstate
 ./main.tf
@@ -130,7 +135,7 @@ ayamohamed@ayamohamed-C02G34GGMD6R tf-backend % find . | grep -v git
 ./.terraform/providers/registry.terraform.io/hashicorp/null/3.1.0/darwin_amd64/terraform-provider-null_v3.1.0_x5
 ./README.md
 ./.terraform.lock.hcl
-
+```
 
 * Create  vi .gitignore  file wi the following content
 
